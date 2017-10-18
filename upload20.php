@@ -1,5 +1,5 @@
 <?php
-$target_dir = "upload/";
+$target_dir = "uploading/";
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 // Check if the form was submitted
 function uploadmanager()
@@ -24,13 +24,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(file_exists("upload/" . $_FILES["photo"]["name"])){
                 echo $_FILES["photo"]["name"] . " is already exists.";
             } else{
-               // echo "https://web.njit.edu/~hs574/public_html/uploads/" . $_FILES["photo"]["name"];
+               // echo "https://web.njit.edu/~aps86/public_html/uploading/" . $_FILES["photo"]["name"];
                 echo "\n"; 
-                move_uploaded_file($_FILES["photo"]["tmp_name"],"upload/" . $_FILES["photo"]["name"]);
+                move_uploaded_file($_FILES["photo"]["tmp_name"],"uploading/" . $_FILES["photo"]["name"]);
                 echo "Your file was uploaded successfully.";
                   
 
-                  header("Location:https://web.njit.edu/~hs574/project2/display.php?name=$filename");
+                  header("Location:https://web.njit.edu/~aps86/Project1234/display.php?name=$filename");
 
             }
 
